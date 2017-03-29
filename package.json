@@ -4,7 +4,7 @@
   "description": "React-Flux app displaying d3 charts",
   "main": "index.js",
   "scripts": {
-    "start": "echo \"Error: no script specified\" && exit 1"
+    "start": "webpack-dev-server"
   },
   "author": "drewmiley",
   "license": "ISC",
