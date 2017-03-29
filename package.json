@@ -1,0 +1,11 @@
+{
+  "name": "d3reactflux",
+  "version": "1.0.0",
+  "description": "React-Flux app displaying d3 charts",
+  "main": "index.js",
+  "scripts": {
+    "start": "echo \"Error: no script specified\" && exit 1"
+  },
+  "author": "drewmiley",
+  "license": "ISC"
+}
