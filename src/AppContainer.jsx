@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
+import BarChart from './components/BarChart';
+
 class App extends Component {
 	render() {
 		return <div>
-			<p>
-				Hello World
-			</p>
+			<BarChart data='Hello World' />
 		</div>
 	};
 };
