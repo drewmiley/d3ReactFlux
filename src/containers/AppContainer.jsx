@@ -1,3 +1,21 @@
+import { Container } from 'flux/utils';
+
+import RecordsActions from '../data/RecordsActions';
+import RecordsStore from '../data/RecordsStore';
 import App from '../views/App';
 
-export default App;
+const getStores = () => {
+	return [
+		RecordsStore
+	];
+};
+
+const getState = () => {
+	return {
+		data: RecordsStore.getState(),
+		onDummyAction: RecordsActions.dummyAction
+	};
+};
+
+
+export default Container.createFunctional(App, getStores, getState);

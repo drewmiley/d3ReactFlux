@@ -4,12 +4,10 @@ import data from '../data/Store';
 
 import BarChart from './components/BarChart';
 
-class App extends Component {
-	render() {
-		return <div>
-			<BarChart data={data} />
-		</div>
-	};
+const App = (props) => {
+	return <div>
+		<BarChart data={props.data} />
+	</div>
 };
 
 export default App;
