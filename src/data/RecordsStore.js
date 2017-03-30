@@ -10,7 +10,7 @@ class RecordsStore extends ReduceStore {
 	}
 
 	getInitialState() {
-		return [{
+		let data = [{
 			name: 'Hello World',
 			score: 2
 		}, {
@@ -23,6 +23,11 @@ class RecordsStore extends ReduceStore {
 			name: 'Salzburger',
 			score: 9
 		}];
+		let title = 'What should I call my band?';
+		return {
+			data,
+			title
+		};
 	}
 
 	reduce(state, action) {

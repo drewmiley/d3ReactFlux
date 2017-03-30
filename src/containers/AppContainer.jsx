@@ -12,7 +12,8 @@ const getStores = () => {
 
 const getState = () => {
 	return {
-		data: RecordsStore.getState(),
+		data: RecordsStore.getState().data,
+		title: RecordsStore.getState().title,
 		onDummyAction: RecordsActions.dummyAction
 	};
 };
