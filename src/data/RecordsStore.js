@@ -10,7 +10,19 @@ class RecordsStore extends ReduceStore {
 	}
 
 	getInitialState() {
-		return ['Hello World', 'Goodbye Spaceman'];
+		return [{
+			name: 'Hello World',
+			score: 2
+		}, {
+			name: 'Goodbye Spaceman',
+			score: 7
+		}, {
+			name: 'Incidus',
+			score: 10
+		}, {
+			name: 'Salzburger',
+			score: 9
+		}];
 	}
 
 	reduce(state, action) {
