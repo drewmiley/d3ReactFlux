@@ -1,5 +1,6 @@
 const ActionTypes = {
-	DUMMY_ACTION: 'DUMMY_ACTION'
+	D_TITLE: 'D_TITLE',
+	SHAKE_POLL: 'SHAKE_POLL'
 };
 
 export default ActionTypes;

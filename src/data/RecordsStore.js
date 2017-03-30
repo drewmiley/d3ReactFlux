@@ -24,17 +24,32 @@ class RecordsStore extends ReduceStore {
 			score: 9
 		}];
 		let title = 'What should I call my band?';
-		return {
+		return Immutable.fromJS({
 			data,
 			title
-		};
+		});
+	}
+
+	dTitle(state) {
+		const randomIndex = Math.floor(Math.random() * state.get('title').length);
+		const newTitle = state.get('title').substr(0, randomIndex) + 'd' + state.get('title').substr(randomIndex + 1);
+		return state.set('title', newTitle);
+	}
+
+	shakePoll(state) {
+		return state.update('data',
+			data => data.update(data.findIndex(item => item.get('name') === 'Hello World'), item => item.set('score', Math.ceil(Math.random() * 10)))
+				.update(data.findIndex(item => item.get('name') === 'Goodbye Spaceman'), item => item.set('score', Math.ceil(Math.random() * 10)))
+				.update(data.findIndex(item => item.get('name') === 'Incidus'), item => item.set('score', Math.ceil(Math.random() * 10)))
+				.update(data.findIndex(item => item.get('name') === 'Salzburger'), item => item.set('score', Math.ceil(Math.random() * 10))));
 	}
 
 	reduce(state, action) {
 		switch(action.type) {
-			case RecordsActionTypes.DUMMY_ACTION:
-				console.log('DUMMY_ACTION');
-				return state;
+			case RecordsActionTypes.D_TITLE:
+				return this.dTitle(state);
+			case RecordsActionTypes.SHAKE_POLL:
+				return this.shakePoll(state);
 			default:
 				return state;
 		}

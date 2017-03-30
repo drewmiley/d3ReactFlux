@@ -9,8 +9,11 @@ const App = (props) => {
 			data={props.data}
 			title={props.title} />
 		<ActionButton
-			buttonText='Click Me'
-			onClick={props.onDummyAction} />
+			buttonText='D Title'
+			onClick={props.onDTitle} />
+		<ActionButton
+			buttonText='Shake Poll'
+			onClick={props.onShakePoll} />
 	</div>
 };
 

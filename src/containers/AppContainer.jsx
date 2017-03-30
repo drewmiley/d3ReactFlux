@@ -12,9 +12,10 @@ const getStores = () => {
 
 const getState = () => {
 	return {
-		data: RecordsStore.getState().data,
-		title: RecordsStore.getState().title,
-		onDummyAction: RecordsActions.dummyAction
+		data: RecordsStore.getState().get('data').toJS(),
+		title: RecordsStore.getState().get('title'),
+		onDTitle: RecordsActions.dTitle,
+		onShakePoll: RecordsActions.shakePoll
 	};
 };
 
