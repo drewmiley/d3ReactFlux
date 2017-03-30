@@ -8,6 +8,6 @@ export default class BarChart extends Component {
 		};
 	};
 	render() {
-		return <button onClick={this.props.onDummyAction}>Click Me</button>
+		return <button onClick={this.props.onClick}>{this.props.buttonText}</button>
 	};
 };

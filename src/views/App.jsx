@@ -8,7 +8,9 @@ const App = (props) => {
 		<BarChart
 			data={props.data}
 			title={props.title} />
-		<ActionButton onDummyAction={props.onDummyAction} />
+		<ActionButton
+			buttonText='Click Me'
+			onClick={props.onDummyAction} />
 	</div>
 };
 
