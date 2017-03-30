@@ -4,7 +4,7 @@ import RecordsDispatcher from './RecordsDispatcher';
 const Actions = {
 	dummyAction() {
 		RecordsDispatcher.dispatch({
-			type: TodoAction.DUMMY_ACTION
+			type: RecordsActionTypes.DUMMY_ACTION
 		})
 	}
 }
