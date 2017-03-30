@@ -9,7 +9,9 @@ export default class BarChart extends Component {
 	};
 	render() {
 		return <div>
-			{this.props.data}
+			{this.props.data.map((d, i) => {
+				return <p key={i}>{d}</p>
+			})}
 		</div>
 	};
 };
