@@ -2,9 +2,10 @@ import RecordsActionTypes from './RecordsActionTypes';
 import RecordsDispatcher from './RecordsDispatcher';
 
 const Actions = {
-	dummyAction() {
+	barClick(barId) {
 		RecordsDispatcher.dispatch({
-			type: RecordsActionTypes.DUMMY_ACTION
+			type: RecordsActionTypes.BAR_CLICK,
+			barId
 		})
 	},
 	dTitle() {

@@ -17,7 +17,9 @@ export default class BarChart extends Component {
 	};
 
 	renderBarChart() {
-		let svg = d3.select(this.rootNode);
+		let self = this;
+
+		let svg = d3.select(self.rootNode);
 		let margin = {top: 20, right: 20, bottom: 30, left: 40};
 		let width = +svg.attr('width') - margin.left - margin.right;
 		let height = +svg.attr('height') - margin.top - margin.bottom;
@@ -28,14 +30,14 @@ export default class BarChart extends Component {
 			.attr('text-anchor', 'middle')  
 			.style('font-size', '16px') 
 			.style('text-decoration', 'underline')  
-			.text(this.props.title);
+			.text(self.props.title);
 
 		let x = d3.scaleBand().rangeRound([0, width]).padding(0.1);
 		let y = d3.scaleLinear().rangeRound([height, 0]);
 
 		let g = svg.append('g').attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
-		x.domain(this.props.data.map(d => d.name));
+		x.domain(self.props.data.map(d => d.name));
 		y.domain([0, 10]);
 
 		g.append('g')
@@ -46,17 +48,21 @@ export default class BarChart extends Component {
 			.call(d3.axisLeft(y).ticks(10));
 
 		let bars = g.selectAll('.bar')
-			.data(this.props.data)
+			.data(self.props.data)
 			.enter()
 			.append('rect')
 			.attr('class', 'bar');
 
 		bars.attr('x', d => x(d.name))
 			.attr('y', d => y(d.score))
+			.attr('id', d => d.id)
+			.attr('fill', d => {
+				return d.id == self.props.selectedId ? 'red' : '';
+			})
 			.attr('width', x.bandwidth())
 			.attr('height', d => height - y(d.score))
 			.on('click', function() {
-				d3.select(this).attr('fill', 'red');
+				self.props.onBarClick(d3.select(this).attr('id'));
 			});
 
 	};

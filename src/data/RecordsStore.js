@@ -11,23 +11,33 @@ class RecordsStore extends ReduceStore {
 
 	getInitialState() {
 		let data = [{
+			id: 1,
 			name: 'Hello World',
 			score: 2
 		}, {
+			id: 2,
 			name: 'Goodbye Spaceman',
 			score: 7
 		}, {
+			id: 3,
 			name: 'Incidus',
 			score: 10
 		}, {
+			id: 4,
 			name: 'Salzburger',
 			score: 9
 		}];
 		let title = 'What should I call my band?';
+		let selectedId = undefined;
 		return Immutable.fromJS({
 			data,
-			title
+			title,
+			selectedId
 		});
+	}
+
+	barClick(state, barId) {
+		return state.set('selectedId', barId);
 	}
 
 	dTitle(state) {
@@ -46,6 +56,8 @@ class RecordsStore extends ReduceStore {
 
 	reduce(state, action) {
 		switch(action.type) {
+			case RecordsActionTypes.BAR_CLICK:
+				return this.barClick(state, action.barId);
 			case RecordsActionTypes.D_TITLE:
 				return this.dTitle(state);
 			case RecordsActionTypes.SHAKE_POLL:
