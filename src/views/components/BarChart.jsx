@@ -45,13 +45,19 @@ export default class BarChart extends Component {
 		g.append('g')
 			.call(d3.axisLeft(y).ticks(10));
 
-		g.selectAll('.bar')
+		let bars = g.selectAll('.bar')
 			.data(this.props.data)
-			.enter().append('rect')
-				.attr('x', d => x(d.name))
-				.attr('y', d => y(d.score))
-				.attr('width', x.bandwidth())
-				.attr('height', d => height - y(d.score));
+			.enter()
+			.append('rect')
+			.attr('class', 'bar');
+
+		bars.attr('x', d => x(d.name))
+			.attr('y', d => y(d.score))
+			.attr('width', x.bandwidth())
+			.attr('height', d => height - y(d.score))
+			.on('click', function() {
+				d3.select(this).attr('fill', 'red');
+			});
 
 	};
 
