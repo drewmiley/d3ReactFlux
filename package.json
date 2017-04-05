@@ -4,7 +4,8 @@
   "description": "React-Flux app displaying d3 charts",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "test": "./node_modules/karma/bin/karma start karma.conf.js"
   },
   "author": "drewmiley",
   "license": "ISC",
@@ -18,6 +19,10 @@
     "events": "^1.1.1",
     "flux": "^3.1.2",
     "immutable": "^3.8.1",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.5.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.1.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "webpack": "^2.3.2",
