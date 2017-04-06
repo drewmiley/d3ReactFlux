@@ -10,7 +10,6 @@ module.exports = function (config) {
         preprocessors: {
             'tests.webpack.js': ['webpack'],
         },
-        reporters: ['dots'],
         colors: true,
         port: 9876,
         reporters: ['progress'],
@@ -25,6 +24,9 @@ module.exports = function (config) {
                         }
                     },
                 ],
+            },
+            resolve: {
+                extensions: ['*', '.js', '.jsx']
             },
             watch: true
         },
