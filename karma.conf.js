@@ -26,6 +26,9 @@ module.exports = function (config) {
                     },
                 ],
             },
+            resolve: {
+                extensions: ['*', '.js', '.jsx']
+            },
             watch: true
         },
         webpackServer: {
