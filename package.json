@@ -4,6 +4,7 @@
   "description": "React-Flux app displaying d3 charts",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint src/index.jsx src/**/*.js src/**/*.jsx src/**/**/*.jsx test/index.jsx test/**/*.js test/**/*.jsx test/**/**/*.jsx",
     "start": "webpack-dev-server",
     "test": "./node_modules/karma/bin/karma start karma.conf.js"
   },
@@ -12,10 +13,17 @@
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-core": "^6.24.0",
+    "babel-eslint": "^7.2.1",
     "babel-loader": "^6.4.1",
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-react": "^6.23.0",
     "d3": "^4.7.4",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-flowtype": "^2.30.4",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
     "events": "^1.1.1",
     "flux": "^3.1.2",
     "immutable": "^3.8.1",
