@@ -92,6 +92,6 @@ BarChart.displayName = 'BarChart';
 BarChart.propTypes = {
   data: PropTypes.array,
   onBarClick: PropTypes.func,
-  selectedId: PropTypes.number,
+  selectedId: PropTypes.string,
   title: PropTypes.string
 };
