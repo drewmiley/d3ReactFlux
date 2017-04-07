@@ -11,10 +11,18 @@ export default class BarChart extends Component {
     };
   }
 
+  componentDidMount() {
+    this.renderBarChart();
+  }
+
   componentWillUpdate() {
     while (this.rootNode.firstChild) {
       this.rootNode.removeChild(this.rootNode.firstChild);
     }
+  }
+
+  componentDidUpdate() {
+    this.renderBarChart();
   }
 
   renderBarChart() {
@@ -28,6 +36,7 @@ export default class BarChart extends Component {
     svg.append('text')
       .attr('x', (width / 2))
       .attr('y', margin.top)
+      .attr('id', 'bar-chart-title')
       .attr('text-anchor', 'middle')
       .style('font-size', '16px')
       .style('text-decoration', 'underline')
@@ -73,7 +82,6 @@ export default class BarChart extends Component {
   }
 
   render() {
-    setTimeout(() => this.renderBarChart(), 0);
     return (
       <svg ref={ node => this.setRootNode(node) } width="960" height="500" />
     );

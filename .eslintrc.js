@@ -20,7 +20,8 @@ module.exports = {
     __PROD__: true,
     __SERVER__: true,
     __CLIENT__: true,
-    'document': true
+    'document': true,
+    'MouseEvent': true
   },
   plugins: [
     'react',
