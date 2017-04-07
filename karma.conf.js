@@ -12,7 +12,7 @@ module.exports = function (config) {
         },
         colors: true,
         port: 9876,
-        reporters: ['progress'],
+        reporters: ['dots'],
         webpack: {
             module: {
                 loaders: [
