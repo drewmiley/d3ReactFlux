@@ -13,6 +13,7 @@ const getStores = () => {
 const getState = () => {
   return {
     data: RecordsStore.getState().get('data').toJS(),
+    line: RecordsStore.getState().get('line').toJS(),
     title: RecordsStore.getState().get('title'),
     selectedId: RecordsStore.getState().get('selectedId'),
     onBarClick: RecordsActions.barClick,

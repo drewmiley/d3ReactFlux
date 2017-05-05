@@ -27,9 +27,11 @@ class RecordsStore extends ReduceStore {
       name: 'Salzburger',
       score: 9
     }];
+    const line = [3, 5, 6, 3, 4, 7, 3, 4, 8, 2, 5, 9];
     const title = 'What should I call my band?';
     return Immutable.fromJS({
       data,
+      line,
       title,
       selectedId: null
     });
