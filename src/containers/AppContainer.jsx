@@ -17,6 +17,7 @@ const getState = () => {
     title: RecordsStore.getState().get('title'),
     selectedId: RecordsStore.getState().get('selectedId'),
     onBarClick: RecordsActions.barClick,
+    onBrightSpark: RecordsActions.brightSpark,
     onDTitle: RecordsActions.dTitle,
     onShakePoll: RecordsActions.shakePoll
   };

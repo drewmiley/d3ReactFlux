@@ -13,9 +13,6 @@ const App = (props) => {
         selectedId={ props.selectedId }
         onBarClick={ props.onBarClick }
       />
-      <Sparkline
-        line={ props.line }
-      />
       <ActionButton
         buttonText="D Title"
         onClick={ props.onDTitle }
@@ -23,6 +20,13 @@ const App = (props) => {
       <ActionButton
         buttonText="Shake Poll"
         onClick={ props.onShakePoll }
+      />
+      <Sparkline
+        line={ props.line }
+      />
+      <ActionButton
+        buttonText="Bright Spark"
+        onClick={ props.onBrightSpark }
       />
     </div>
   );
@@ -34,6 +38,7 @@ App.propTypes = {
   data: PropTypes.array,
   line: PropTypes.array,
   onBarClick: PropTypes.func,
+  onBrightSpark: PropTypes.func,
   onClick: PropTypes.func,
   onDTitle: PropTypes.func,
   onShakePoll: PropTypes.func,

@@ -41,6 +41,11 @@ class RecordsStore extends ReduceStore {
     return state.set('selectedId', barId);
   }
 
+  brightSpark(state) {
+    console.log('BRIGHT_SPARK');
+    return state;
+  }
+
   dTitle(state) {
     const randomIndex = Math.floor(Math.random() * state.get('title').length);
     const newTitle = state.get('title').substr(0, randomIndex) + 'd' + state.get('title').substr(randomIndex + 1);
@@ -59,6 +64,8 @@ class RecordsStore extends ReduceStore {
     switch (action.type) {
       case RecordsActionTypes.BAR_CLICK:
         return this.barClick(state, action.barId);
+      case RecordsActionTypes.BRIGHT_SPARK:
+        return this.brightSpark(state);
       case RecordsActionTypes.D_TITLE:
         return this.dTitle(state);
       case RecordsActionTypes.SHAKE_POLL:

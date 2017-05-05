@@ -8,6 +8,11 @@ const Actions = {
       barId
     });
   },
+  brightSpark() {
+    RecordsDispatcher.dispatch({
+      type: RecordsActionTypes.BRIGHT_SPARK
+    });
+  },
   dTitle() {
     RecordsDispatcher.dispatch({
       type: RecordsActionTypes.D_TITLE
