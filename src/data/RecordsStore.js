@@ -42,8 +42,7 @@ class RecordsStore extends ReduceStore {
   }
 
   brightSpark(state) {
-    console.log('BRIGHT_SPARK');
-    return state;
+    return state.update('line', line => line.concat(Math.ceil(Math.random() * 10)));
   }
 
   dTitle(state) {
